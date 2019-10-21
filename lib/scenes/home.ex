@@ -25,8 +25,7 @@ defmodule Art.Scene.Home do
 
     graph =
       Graph.build(clear_color: :black)
-      # |> pentagram_fractal([radius: 200, depth: 2], stroke: {2, :green}, translate: {center_x, center_y})
-      |> pentagram_fractal([radius: 200, depth: 3], stroke: {2, :green}, translate: {center_x, center_y})
+       |> pentagram_fractal([radius: 200, depth: 3], stroke: {2, :green}, translate: {center_x, center_y})
       # |> rectangle({width, height})
 
       {:ok, graph, [push: graph, continue: {:__set_root__, viewport, __MODULE__}]}

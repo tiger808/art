@@ -25,7 +25,7 @@ defmodule Art.MixProject do
     [
       {:scenic, "~> 0.10"},
       {:scenic_driver_glfw, "~> 0.10", targets: :host},
-      # {:scenic_live_reload, "~> 0.1", only: :dev},
+      {:scenic_live_reload, "~> 0.1", only: :dev},
       # {:micro_timer, "~> 0.1.1"}
     ]
   end

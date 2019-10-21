@@ -32,7 +32,7 @@ defmodule Art.Component.PentagramFractal do
 
     graph =
       Graph.build(clear_color: :black)
-      |> pentagram(radius)
+      |> pentagram(radius, stroke: {2, :green})
       |> recurse(radius, depth)
 
       Logger.debug(~s(PentagramFractal.init radius: #{inspect(radius)} depth: #{inspect(depth)}\n)
@@ -49,11 +49,11 @@ defmodule Art.Component.PentagramFractal do
   def recurse(graph, radius, depth) when depth > 0 do
     vertices = Enum.map(Pentagram.unit_pentagram_vertices(), &Vector2.mul(&1, radius))
     graph = Enum.reduce(vertices, graph, fn vertex, g ->
-      pentagram_fractal(g, [radius: radius/4, depth: depth], [translate: vertex, stroke: {2, :blue}])
+      pentagram_fractal(g, [radius: radius/4, depth: depth], [stroke: {2, :green}, translate: vertex])
       end
     )
     # Logger.debug(inspect(graph))
-  graph
+    graph
   end
 
   # def recurse(graph, radius, depth) when depth > 0 do
